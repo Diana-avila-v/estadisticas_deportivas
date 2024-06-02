@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Estadísticas Deportivas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;             /* Este es el color de fondo actual */
+            color: #495057;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Menú de navegación -->
+<nav>
+    <div class="container">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('ingresar_estadisticas') }}">Ingresar Estadísticas</a>
+        <a href="{{ url_for('ver_estadisticas') }}">Ver Estadísticas</a>
+        <a href="{{ url_for('operaciones_matrices') }}">Operaciones con Matrices</a>
+        <a href="{{ url_for('visualizacion_datos') }}">Visualización de Datos</a>
+        <a href="{{ url_for('generar_informe_pdf') }}">Generar Informe PDF</a>
+    </div>
+</nav>
+
+<!-- Contenido de tu página -->
+<div class="container">
+    <h1>Bienvenido a la Plataforma de Estadísticas Deportivas</h1>
+    <p>Esta plataforma te permite ingresar y analizar estadísticas deportivas de equipos o jugadores.</p>
+    <p>¡Explora las diferentes funcionalidades en el menú de navegación!</p>
+</div>
+
+</body>
+</html>
+

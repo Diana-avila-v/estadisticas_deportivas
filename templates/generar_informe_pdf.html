@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Generar Informe PDF{% endblock %}
+
+{% block content %}
+    <h1>Generar Informe PDF</h1>
+
+    <form method="post" action="{{ url_for('generar_informe_pdf') }}">
+        <input type="submit" value="Generar Informe PDF">
+    </form>
+{% endblock %}

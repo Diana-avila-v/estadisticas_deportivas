@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Datos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        #chart-container {
+            margin-top: 20px;
+        }
+
+        #chart {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Menú de navegación -->
+<nav>
+    <div class="container">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('ingresar_estadisticas') }}">Ingresar Estadísticas</a>
+        <a href="{{ url_for('ver_estadisticas') }}">Ver Estadísticas</a>
+        <a href="{{ url_for('operaciones_matrices') }}">Operaciones con Matrices</a>
+        <a href="{{ url_for('visualizacion_datos') }}">Visualización de Datos</a>
+        <a href="{{ url_for('generar_informe_pdf') }}">Generar Informe PDF</a>
+    </div>
+</nav>
+
+<!-- Contenido de tu página -->
+<div class="container">
+    <h1>Visualización de Datos</h1>
+    <div id="chart-container">
+        <canvas id="chart"></canvas>
+    </div>
+</div>
+
+<!-- Agrega el enlace a Chart.js al final del cuerpo del documento -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Script para inicializar el gráfico -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx = document.getElementById('chart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar', // Cambia el tipo de gráfico según tus necesidades
+            data: {
+                labels: ['Equipo 1', 'Equipo 2', 'Equipo 3'], // Ejemplo de etiquetas
+                datasets: [{
+                    label: 'Puntos por Equipo',
+                    data: [30, 45, 60], // Ejemplo de datos
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 206, 86, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
